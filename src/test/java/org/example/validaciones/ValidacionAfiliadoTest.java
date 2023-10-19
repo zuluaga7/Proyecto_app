@@ -102,7 +102,7 @@ public  void validarNombreCorrecto(){
     }
     @Test
     public void validarCiudadIncorrecta(){
-        String ciudadPrueba="-12";
+        String ciudadPrueba="-27";
         Exception resultado=Assertions.assertThrows(Exception.class,()->this.validacionAfiliado.ValidarCiudad(Integer.valueOf(ciudadPrueba)));
         Assertions.assertEquals("ciudad con longitud invalida",resultado.getMessage());
     }
@@ -127,7 +127,7 @@ public  void validarNombreCorrecto(){
 
     @Test
     public void validarCorreoIncorrecto(){
-        String correoPrueba="";
+        String correoPrueba="asde34sdfgsdf aagl.com";
         Exception resultado=Assertions.assertThrows(Exception.class,()->this.validacionAfiliado.validarDepartamento(Integer.valueOf(correoPrueba)));
         Assertions.assertEquals("no cumplen con el minimo o maximo de caracteres",resultado.getMessage());
     }
@@ -147,8 +147,8 @@ public  void validarNombreCorrecto(){
     }
     @Test
     public void validarTelefonoIncorrectoPorLetras(){
-        String correoPrueba="zddsf";
-        Exception resultado=Assertions.assertThrows(Exception.class,()->this.validacionAfiliado.validarDepartamento(Integer.valueOf(correoPrueba)));
+        String telefonoPrueba="2s df";
+        Exception resultado=Assertions.assertThrows(Exception.class,()->this.validacionAfiliado.validarTelefono((telefonoPrueba)));
         Assertions.assertEquals("telefono con longitud invalida",resultado.getMessage());
 
     }

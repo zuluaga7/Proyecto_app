@@ -45,7 +45,8 @@ public class ValidacionesExamenesGTest {
     }
     @Test
     public void validarImagenCorrecta(){
-        String imagenPrueba="157";
+        String imagenPrueba="12323sdfsdfdsfskndfhsdkjfbgsdfkjgnsdfkbgsdfnmgdbfgmndbfdsfbn" +
+                "dsfbgdfnkgbdnfgbdfngbdfnkgbdfkjbgdfngbdfngbdfnmgbdfmngbdfgdfgdfdfgdfgdf7";
         Boolean resultados=Assertions.assertDoesNotThrow(()->this.validacionExamenesG.validarImagenExamen(imagenPrueba));
         Assertions.assertTrue(resultados);
     }

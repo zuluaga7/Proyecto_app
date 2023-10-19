@@ -46,13 +46,13 @@ public class ValidacionSignosVitalesTest {
     @Test
     public void validarUnidadDeMedidaCorrecta(){
         Integer idPruebaMedida=21;
-        Boolean resultados= Assertions.assertDoesNotThrow(()->this.validacSignoVital.validarId(idPruebaMedida));
+        Boolean resultados= Assertions.assertDoesNotThrow(()->this.validacSignoVital.validarUnidadMedida(idPruebaMedida));
         Assertions.assertTrue(resultados);
     }
     @Test
     public void validarUnidadDeMedidaIncorrecto(){
-        Integer idPruebaMedida=1;
-        Exception resultado=Assertions.assertThrows(Exception.class,()->this.validacSignoVital.validarId(idPruebaMedida));
-        Assertions.assertEquals("el id no puede ser negativo",resultado.getMessage());
+        Integer idPruebaMedida=-1;
+        Exception resultado=Assertions.assertThrows(Exception.class,()->this.validacSignoVital.validarUnidadMedida(idPruebaMedida));
+        Assertions.assertEquals("usted está paila",resultado.getMessage());
     }
 }

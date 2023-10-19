@@ -1,5 +1,6 @@
 package org.example.validaciones;
 
+import org.example.utilidades.Mensajes;
 import org.example.utilidades.Utilidad;
 
 import java.util.regex.Matcher;
@@ -13,31 +14,27 @@ public class ValidacionExamenesG {
 
     public Boolean validarId(Integer id) throws Exception {
         if (id < 0) {
-            throw new Exception("el id no puede ser negativo");
-        }
-        String expresionRegular = "^[1-9][0-9]*$";
-        if (!this.utilidad.buscarCoincidencia(expresionRegular, String.valueOf(id))) {
-            throw new Exception("revise el formato ingresado");
+            throw new Exception(Mensajes.ID_NEGATIVO.getMensaje());
         }
         return true;
     }
 
     public Boolean validarNombresExamen(String nombreExamen) throws Exception {
         if (nombreExamen.length() < 10 || nombreExamen.length() > 150) {
-            throw new Exception("el nombre debe tener entre 10 y 150 caracteres");
+            throw new Exception(Mensajes.NOMBRES_LONGITUD.getMensaje());
 
         }
         String expresionRegular = "^[a-zA-Z ]+$";
         if (!this.utilidad.buscarCoincidencia(expresionRegular, nombreExamen)) {
-            throw new Exception("el nombre no cumple los parametros");
+            throw new Exception(Mensajes.NOMBRES_FORMATO.getMensaje());
         }
         return true;
     }
 
 
     public Boolean validarImagenExamen(String ImagenExamen) throws Exception {
-        if (ImagenExamen.length() < 200) {
-            throw new Exception("La imagen no cumple con los parametros");
+        if (ImagenExamen.length() < 50) {
+            throw new Exception(Mensajes.IMAGEN_LONGITUD.getMensaje());
         }
        String expresionRegular = ".*\\.(jpg|jpeg|png|gif|bmp|svg)$";
         Pattern pattern= Pattern.compile((ImagenExamen));
