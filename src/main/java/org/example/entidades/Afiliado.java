@@ -11,6 +11,7 @@ public class Afiliado {
     private String nombres;
     private String apellidos;
     private LocalDate fechaNacimiento;
+
     private Integer ciudad;
     private Integer departamento;
     private String correoElectronico;
