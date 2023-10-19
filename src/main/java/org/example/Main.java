@@ -4,6 +4,7 @@ package org.example;
 import org.example.entidades.Afiliado;
 import org.example.entidades.ExamenesGenerales;
 import org.example.entidades.SignoVital;
+import org.example.validaciones.ValidacionAfiliado;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -11,15 +12,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-       Afiliado afiliado=new Afiliado();
+        Afiliado afiliado = new Afiliado();
 
 
-     Scanner entradaTeclado = new Scanner(System.in);
+        Scanner entradaTeclado = new Scanner(System.in);
 
 
-
-      System.out.println("Digita el id del usuario");
-      afiliado.setId(entradaTeclado.nextInt());
+        System.out.println("Digita el id del usuario");
+        afiliado.setId(entradaTeclado.nextInt());
 
         System.out.println("digita el nombre del usuario");
         afiliado.setNombres(entradaTeclado.nextLine());
@@ -43,8 +43,7 @@ public class Main {
         afiliado.setTelefono(entradaTeclado.nextLine());
 
 
-        ExamenesGenerales ExamenesGenerales=new ExamenesGenerales();
-
+        ExamenesGenerales ExamenesGenerales = new ExamenesGenerales();
 
 
         System.out.println("Digita el id del Examen");
@@ -72,6 +71,8 @@ public class Main {
         System.out.println("Digite la Unidad de medida");
         SignoVital.setUnidadMedida(entradaTeclado.nextInt());
 
+    }
+}
 
 
 
@@ -104,12 +105,7 @@ public class Main {
         ExamenesGenerales.setDiagnostico("esta de muerte");
         ExamenesGenerales.setImagenExamen("vuelve");*/
 
-
-
-
-
-
-    }
-
-
-}
+       /* ValidacionAfiliado validacionAfiliado = new ValidacionAfiliado();
+        validacionAfiliado.trabajarFechas(); --  trabajo de clase con las fechas
+        /*
+        */
