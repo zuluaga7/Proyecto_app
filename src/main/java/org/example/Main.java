@@ -71,6 +71,9 @@ public class Main {
         System.out.println("Digite la Unidad de medida");
         SignoVital.setUnidadMedida(entradaTeclado.nextInt());
 
+        System.out.println("Digite la Unidad de medida");
+        SignoVital.setUnidadMedida(entradaTeclado.nextInt());
+
     }
 }
 

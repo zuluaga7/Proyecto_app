@@ -131,7 +131,7 @@ public class ValidacionAfiliado {
         }
         String espresionRegular="^[0-9]+$";
         if (!this.utilidad.buscarCoincidencia(espresionRegular, String.valueOf(ciudad))){
-            throw new Exception(Mensajes.CIUDAD_LONGITUD.getMensaje());
+            throw new Exception(Mensajes.CIUDAD_FORMATO.getMensaje());
         }
         return true;
 
@@ -146,6 +146,7 @@ public class ValidacionAfiliado {
             throw new Exception(Mensajes.DEPARTAMENTO_FORMATO.getMensaje());
         }
         return true;
+        //asdasdas
     }
     public Boolean validarCorreoElectronico(String correoElectronico) throws Exception{
         if(correoElectronico.length()<0 || correoElectronico.length()>14){ // acá le digo LO QUE NO DEBE HACER
